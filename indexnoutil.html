@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Image map</title>
+	<link rel="stylesheet" type="text/css" href="elementos.css">
+</head>
+<style>
+
+.elem  {
+	width: 40px;
+	height: 40px;
+	position: absolute;
+}
+
+#ampliado {
+	width: 124px !important;
+	height: 126px !important;
+	margin: auto 0 auto 10px;
+	position: absolute;
+	left: 244px;
+	top: 14px;
+}
+
+#tablap {
+	border: 1px solid black;
+	width: 100%;
+	height: 500px;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	padding: auto;
+	overflow-x: scroll;
+	overflow-y: hidden;
+}
+
+#imgtabla {
+	width: 800px;
+	height: 500px;
+}
+
+@media (min-width: 830px) {
+	#tablap {
+		width: 800px;
+	}
+}
+</style>
+<body>
+
+
+<div id="tablap">
+
+	<a href="#"><img src="tablaperiodica.png" id="imgtabla" ismap></a>
+	<img src="lineas.png" id="ampliado">
+
+</div>
+
+<script>
+
+const amp = document.getElementById('ampliado');
+const elementos = document.querySelectorAll(".elem");
+
+
+function ampliar() {
+	const est = getComputedStyle(this);
+	let left = parseFloat(est.left) * 3;
+	let top = parseFloat(est.top) * 3;
+	amp.style.background = `url('tablaperiodica.png') -${left}px -${top}px`;
+}
+
+for (let index = 0; index < 118; index++) {
+    elementos[index].onclick = ampliar;
+}
+
+</script>
+</body>
+</html>

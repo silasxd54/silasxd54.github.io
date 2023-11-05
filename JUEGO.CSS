@@ -1,0 +1,15 @@
+.FONDOPAGINA{
+	background-color: rgb(209, 235, 245, 1.0);
+}
+.BLANCO{
+	background-color: skyblue;
+	border: BLACK double 7px;
+}
+}
+#borde{
+	border: BLACK double 7px;
+}
+#RESPUESTA{
+	background-color: lightgreen;
+	border:darkgreen solid;
+}
